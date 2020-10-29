@@ -25,22 +25,24 @@ let s:p={
       \ 'cursorLine': ['#323232', 236],
       \ 'cursorLineNr': ['#A4A3A3', 248],
       \ 'errorMsg': ['#CC666E', 174],
-      \ 'error': ['#BC3F3C', 131],
+      \ 'error': ['#bf5245', 131],
       \ 'warning': ['#A9B7C6', 145],
       \ 'muted': ['#606060', 241],
       \ 'link': ['#287BDE', 32],
       \ 'stdOutput': ['#BBBBBB', 250],
       \ 'lineNumber': ['#606366', 241],
-      \ 'matchBraceFg': ['#FFEF28', 220],
+      \ 'matchBraceFg': ['#FFC66D', 220],
       \ 'matchBraceBg': ['#3B514D', 59],
-      \ 'todo': ['#A8C023', 142],
+      \ 'todo': ['#FFC66D', 142],
       \ 'search': ['#32593D', 23],
       \ 'incSearch': ['#155221', 22],
       \ 'foldedFg': ['#8C8C8C', 245],
       \ 'foldedBg': ['#3A3A3A', 237],
       \ 'constant': ['#9876AA', 103],
       \ 'keyword': ['#CC7832', 172],
-      \ 'comment': ['#808080', 244],
+      \ 'rubyClass': ['#CC7832', 172],
+      \ 'rubySymbol': ['#6897BB', 103],
+      \ 'comment': ['#b69c61', 244],
       \ 'docComment': ['#629755', 65],
       \ 'string': ['#6A8759', 101],
       \ 'number': ['#6897BB', 103],
@@ -56,14 +58,14 @@ let s:p={
       \ 'changeStripe': ['#374752', 60],
       \ 'deleteStripe': ['#656E76', 242],
       \ 'typo': ['#659C6B', 72],
-      \ 'metaData': ['#BBB529', 142],
-      \ 'macroName': ['#908B25', 100],
+      \ 'metaData': ['#FFC66D', 142],
+      \ 'macroName': ['#FFC66D', 100],
       \ 'cDataStructure': ['#B5B6E3', 146],
       \ 'cStructField': ['#9373A5', 103],
       \ 'debug': ['#666D75', 102],
       \ 'codeError': ['#532B2E', 52],
       \ 'codeWarning': ['#52503A', 59],
-      \ 'errorStripe': ['#9E2927', 124],
+      \ 'errorStripe': ['#bf5245', 124],
       \ 'warnStripe': ['#BE9117', 136],
       \ 'infoStripe': ['#756D56', 101],
       \ 'typeDef': ['#B9BCD1', 146],
@@ -90,16 +92,16 @@ let s:p={
       \ 'wrapGuide': ['#2F2F2F', 236],
       \ 'ANSIBlack': ['#FFFFFF', 231],
       \ 'ANSIRed': ['#FF6B68', 210],
-      \ 'ANSIGreen': ['#A8C023', 142],
-      \ 'ANSIYellow': ['#D6BF55', 179],
-      \ 'ANSIBlue': ['#5394EC', 68],
+      \ 'ANSIGreen': ['#FFC66D', 142],
+      \ 'ANSIYellow': ['#FFC66D', 179],
+      \ 'ANSIBlue': ['#067eb4', 68],
       \ 'ANSIMagenta': ['#AE8ABE', 139],
       \ 'ANSICyan': ['#299999', 37],
       \ 'ANSIGray': ['#999999', 247],
       \ 'ANSIDarkGray': ['#555555', 240],
       \ 'ANSIBrightRed': ['#FF8785', 210],
-      \ 'ANSIBrightGreen': ['#A8C023', 142],
-      \ 'ANSIBrightYellow': ['#FFFF00', 226],
+      \ 'ANSIBrightGreen': ['#FFC66D', 142],
+      \ 'ANSIBrightYellow': ['#FFC66D', 226],
       \ 'ANSIBrightBlue': ['#7EAEF1', 110],
       \ 'ANSIBrightMagenta': ['#FF99FF', 219],
       \ 'ANSIBrightCyan': ['#6CDADA', 116],
@@ -302,6 +304,34 @@ if !has('nvim')
         \ s:p.ANSIWhite[0]
         \ ]
 endif
+" Ruby
+hi! link rubyAccess error
+hi! link rubyAttribute error
+hi! link rubyBoolean keyword
+hi! link rubyClass keyword
+hi! link rubyClassName constant
+hi! link rubyClassOperator function
+hi! link rubyClassVariable error
+hi! link rubyClassDeclaration error
+hi! link rubyComment comment
+hi! link rubyConstant error
+hi! link rubyDefine keyword
+hi! link rubyEigenClassOperator function
+hi! link rubyInclude error
+hi! link rubyInstanceVariable constant
+hi! link rubyKeyword keyword
+hi! link rubyMacro error
+hi! link rubyModule keyword
+hi! link rubyModuleName constant
+hi! link rubyOperator function
+hi! link rubyPredefinedConstant error
+hi! link rubyPredefinedItentifier error
+hi! link rubyScopeOperator function
+hi! link rubySuperClassOperator constant
+hi! link rubySymbol number
+hi! link rubyType error
+hi! link rubyIdenfier ANSIBlue
+
 
 " C/C++
 call s:Hi('cMacroName', s:p.macroName)
